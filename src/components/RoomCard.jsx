@@ -17,7 +17,7 @@ const RoomCard = ({ room, isAdmin = false }) => {
 		if (!confirm) return;
 
 		try {
-			const res = await axios.delete(`/api/rooms/${room._id}`)
+			const res = await axios.delete(`https://tgo-hotel-api.onrender.com/rooms/${room._id}`)
 			toast.success(`${room.name} deleted successfully`)
 		} catch (error) {
 			toast.error("Something went wrong")

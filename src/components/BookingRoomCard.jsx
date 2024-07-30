@@ -35,7 +35,7 @@ const BookingRoomCard = () => {
 	useEffect(() => {
 		async function fetchRooms() {
 			try {
-				const res = await axios.get("/api/rooms");
+				const res = await axios.get("https://tgo-hotel-api.onrender.com/rooms");
 				const data = res.data;
 				console.log("ROOMS API: ", data);
 				setRooms(data);

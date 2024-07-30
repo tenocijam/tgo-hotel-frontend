@@ -9,7 +9,7 @@ const RoomsListing = () => {
 	useEffect(() => {
 		const getRooms = async () => {
 			try {
-				const res = await axios.get("/api/rooms");
+				const res = await axios.get("https://tgo-hotel-api.onrender.com/rooms");
 				const data = await res.data;
 				console.log("DATA", data);
 

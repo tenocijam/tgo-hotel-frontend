@@ -30,11 +30,11 @@ const AdminEditRoom = () => {
 
 	useEffect(() => {
 		async function fetchFromApi() {
-			let res = await axios.get("/api/amenities");
+			let res = await axios.get("https://tgo-hotel-api.onrender.com/amenities");
 			const amenities = res.data;
 			setAllAmenities(amenities);
 
-			res = await axios.get("/api/views");
+			res = await axios.get("https://tgo-hotel-api.onrender.com/views");
 			const views = res.data;
 			setAllViews(views);
 
@@ -75,7 +75,7 @@ const AdminEditRoom = () => {
 		// console.log(updatedRoom)
 
 		try {
-			const res = await axios.put(`/api/rooms/${room._id}`, updatedRoom);
+			const res = await axios.put(`https://tgo-hotel-api.onrender.com/rooms/${room._id}`, updatedRoom);
 			// console.log(res.data);
 			toast.success(`Room: ${updatedRoom.name} updated successfully`);
 			return navigate("/admin");

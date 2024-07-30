@@ -24,12 +24,12 @@ const AdminAddRoom = () => {
 
 	useEffect(() => {
 		async function fetchFromApi() {
-			let res = await axios.get("/api/amenities");
+			let res = await axios.get("https://tgo-hotel-api.onrender.com/amenities");
 			const amenities = res.data;
 			setAllAmenities(amenities);
             setRoomAmenities([amenities[0].name])
 
-			res = await axios.get("/api/views");
+			res = await axios.get("https://tgo-hotel-api.onrender.com/views");
 			const views = res.data;
 			setAllViews(views);
             setRoomView(views[0].name)
@@ -71,7 +71,7 @@ const AdminAddRoom = () => {
 		console.log(newRoom)
 
 		try {
-			const res = await axios.post(`/api/rooms/`, newRoom);
+			const res = await axios.post(`https://tgo-hotel-api.onrender.com/rooms/`, newRoom);
 			console.log(newRoom);
 			toast.success(`Room: ${newRoom.name} added successfully`);
 			return navigate("/admin/rooms");

@@ -58,7 +58,7 @@ const MakePayment = () => {
 			totalCost
 		};
 
-		bookedRooms != [] && (await axios.post("/api/bookings", bookingData));
+		bookedRooms != [] && (await axios.post("https://tgo-hotel-api.onrender.com/bookings", bookingData));
 
 		toast.success("Booking successfull");
 	}

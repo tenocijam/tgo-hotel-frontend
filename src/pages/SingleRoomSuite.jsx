@@ -80,7 +80,7 @@ const SingleRoomSuite = () => {
 };
 
 const roomLoader = async ({ params }) => {
-	const res = await fetch(`/api/rooms/${params.id}`);
+	const res = await fetch(`https://tgo-hotel-api.onrender.com/rooms/${params.id}`);
 	const data = res.json();
 
 	return data;

@@ -13,7 +13,7 @@ const BookingsListing = () => {
 	useEffect(() => {
 		async function fetchBookings() {
 			try {
-				const res = await axios.get("/api/bookings");
+				const res = await axios.get("https://tgo-hotel-api.onrender.com/bookings");
 				const data = res.data;
 				setBookings(data);
                 // fetchRooms();
@@ -27,7 +27,7 @@ const BookingsListing = () => {
 
         async function fetchRooms() {
             try {
-                const res = await axios.get("/api/rooms/");
+                const res = await axios.get("https://tgo-hotel-api.onrender.com/rooms/");
                 const data = res.data;
 
                 setRooms(data);
@@ -45,7 +45,7 @@ const BookingsListing = () => {
         // console.log(id);
         let data = "";
         async function getData () {
-            const res = await axios.get(`/api/rooms/${id}`)
+            const res = await axios.get(`https://tgo-hotel-api.onrender.com/rooms/${id}`)
             data = res.data
             // setRoomName(data.name)
             setRoomNameLoading(false)
