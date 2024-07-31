@@ -4,9 +4,11 @@ const GuestCounter = ({ title, count, onCountChange }) => {
 	const [counter, setCounter] = useState(count);
 
 	function addCount() {
-		const newCount = counter + 1;
-		setCounter(newCount);
-		onCountChange(newCount);
+		if (counter < 5) {
+			const newCount = counter + 1;
+			setCounter(newCount);
+			onCountChange(newCount);
+		}
 	}
 
 	function subtractCount() {
