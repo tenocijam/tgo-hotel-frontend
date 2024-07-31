@@ -28,13 +28,13 @@ const RoomCard = ({ room, isAdmin = false }) => {
 
 	return (
 		<>
-			<div className="max-w-xs bg-white rounded-[20px] shadow-lg dark:bg-gray-800 dark:border-gray-700">
+			<div className="max-w-xs bg-white rounded-[20px] shadow-lg dark:bg-gray-800 dark:border-gray-700 transition-transform transform hover:scale-105">
 				<a className="drop-shadow-xl">
 					<img className="rounded-[20px]" src={room.images[0]} alt="" />
 				</a>
 				<div className="p-5 place-self-end flex flex-col">
 					<div>
-						<a>
+						<a href={`/rooms-suits/${room._id}`}>
 							<h5 className="mb-2 text-2xl font-bold tracking-tight text-black dark:text-white">
 								{room.name}
 							</h5>
