@@ -10,7 +10,10 @@ const DateInput = () => {
 	// }
 
 	const [selectedCheckInDate, setSelectedCheckInDate] = useState(localStorage.getItem("checkin"));
-	const [selectedCheckOutDate, setSelectedCheckOutDate] = useState(localStorage.getItem("checkout"));
+	const [selectedCheckOutDate, setSelectedCheckOutDate] = useState(
+		localStorage.getItem("checkout")
+	);
+	const [nightsCount, setNightsCount] = useState();
 
 	const handleCheckInChange = (e) => {
 		setSelectedCheckInDate(e.target.value);
@@ -30,9 +33,16 @@ const DateInput = () => {
 		console.log(e.target.value);
 	};
 
+	useEffect(() => {
+		const nights =
+			(new Date(selectedCheckOutDate) - new Date(selectedCheckInDate)) / (1000 * 3600 * 24);
+		setNightsCount(nights);
+		console.log(nights);
+	}, [selectedCheckInDate, selectedCheckOutDate]);
+
 	return (
 		<>
-			<div className="flex justify-center gap-4 mb-6 mt-6">
+			<div className="flex justify-center gap-4 mb-6 mt-6 items-center">
 				<div>
 					<h5 className="text-lg font-bold mb-2">Check-in</h5>
 					<input
@@ -54,6 +64,7 @@ const DateInput = () => {
 						onChange={handleCheckOutChange}
 					/>
 				</div>
+				{nightsCount > 0 && <p className="text -lg font-semibold">{`${nightsCount} nights`}</p>}
 			</div>
 		</>
 	);
