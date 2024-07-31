@@ -19,6 +19,7 @@ import AdminRooms from "./pages/AdminRooms";
 import AdminEditRoom from "./pages/AdminEditRoom";
 import AdminAddRoom from "./pages/AdminAddRoom";
 import AdminBookings from "./pages/AdminBookings";
+import Gallery from "./pages/Gallery";
 
 const router = createBrowserRouter(
 	createRoutesFromElements(
@@ -29,6 +30,7 @@ const router = createBrowserRouter(
 				<Route path="/rooms-suits/:id" element={<SingleRoomSuite />} loader={roomLoader} />
 				<Route path="/booking" element={<Booking />} />
 				<Route path="/make-payment" element={<MakePayment />} />
+				<Route path="/gallery" element={<Gallery />} />
 				<Route path="/about" element={<About />} />
 				<Route path="*" element={<NotFound />} />
 			</Route>
